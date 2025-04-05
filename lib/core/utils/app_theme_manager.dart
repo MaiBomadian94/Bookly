@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppThemeManager {
   static ThemeData themeData = ThemeData(
-    useMaterial3: false,
-    scaffoldBackgroundColor: AppColors.primaryColor,
-  );
+      useMaterial3: false,
+      scaffoldBackgroundColor: AppColors.primaryColor,
+      brightness: Brightness.dark);
 }
