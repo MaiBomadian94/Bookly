@@ -20,6 +20,8 @@ class _SplashBodyViewState extends State<SplashBodyView>
   void initState() {
     super.initState();
     initSlidingAnimation();
+
+    Future.delayed(const Duration(seconds: 2));
   }
 
   @override
