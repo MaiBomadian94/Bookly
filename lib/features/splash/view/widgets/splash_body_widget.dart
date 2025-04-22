@@ -1,5 +1,7 @@
+import 'package:bookly_app/core/routing/app_routes.dart';
+import 'package:bookly_app/core/routing/route_generator.dart';
 import 'package:bookly_app/core/utils/assets_data.dart';
-import 'package:bookly_app/features/splash/views/widgets/sliding_widget.dart';
+import 'package:bookly_app/features/splash/view/widgets/sliding_widget.dart';
 import 'package:flutter/cupertino.dart';
 
 class SplashBodyView extends StatefulWidget {
@@ -20,8 +22,9 @@ class _SplashBodyViewState extends State<SplashBodyView>
   void initState() {
     super.initState();
     initSlidingAnimation();
-
+    navigateToHome();
   }
+
 
   @override
   void dispose() {
@@ -58,4 +61,10 @@ class _SplashBodyViewState extends State<SplashBodyView>
     animationController.forward();
     //  slidingAnimation.addListener(() {}); // to make it updated
   }
+ navigateToHome() {
+    return Future.delayed(const Duration(seconds: 2),(){
+      AppNavigator.push(AppRoutes.home);
+    },);
+  }
+
 }

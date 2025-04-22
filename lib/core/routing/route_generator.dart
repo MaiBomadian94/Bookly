@@ -1,5 +1,6 @@
+import 'package:bookly_app/features/home/presentation/view/home_view.dart';
 import 'package:flutter/material.dart';
-import '../../features/splash/views/splash_view.dart';
+import '../../features/splash/view/splash_view.dart';
 import 'app_routes.dart';
 
 class AppNavigator {
@@ -11,6 +12,12 @@ class AppNavigator {
       case AppRoutes.initial:
         return MaterialPageRoute(
           builder: (context) => const SplashView(),
+          settings: settings,
+        );
+
+      case AppRoutes.home:
+        return MaterialPageRoute(
+          builder: (context) => const HomeView(),
           settings: settings,
         );
       default:
