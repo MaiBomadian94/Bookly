@@ -2,6 +2,7 @@ import 'package:bookly_app/features/home/presentation/view/widgets/featured_book
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/utils/assets_data.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_app_bar.dart';
 
@@ -17,12 +18,46 @@ class HomeViewBody extends StatelessWidget {
         children: [
           const CustomAppBar(),
           const FeaturedBooksListView(),
-          SizedBox(
-            height: 20.h,
+          Padding(
+            padding:  EdgeInsets.symmetric(vertical: 20.h),
+            child: const Text(
+              'Best Seller',
+              style: Styles.textTitle18,
+            ),
           ),
-          const Text(
-            'Best Seller',
-            style: Styles.title,
+          BestSellerItem(),
+        ],
+      ),
+    );
+  }
+}
+
+class BestSellerItem extends StatelessWidget {
+  const BestSellerItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 120.h,
+      child: Row(
+        children: [
+          AspectRatio(
+            aspectRatio: 2.8 / 4,
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage(AssetsData.testImage),
+                ),
+              ),
+            ),
+          ),
+          Column(
+            children: [
+              Row(
+                children: [],
+              ),
+            ],
           ),
         ],
       ),
