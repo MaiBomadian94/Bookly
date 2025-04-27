@@ -1,7 +1,6 @@
 import 'package:bookly_app/core/utils/app_theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'core/routing/app_routes.dart';
 
 void main() {
