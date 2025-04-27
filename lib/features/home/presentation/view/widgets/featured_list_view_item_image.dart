@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import '../../../../../core/utils/assets_data.dart';
 
-class FeaturedListViewItem extends StatelessWidget {
-  const FeaturedListViewItem({super.key});
+class FeaturedListViewItemImage extends StatelessWidget {
+  const FeaturedListViewItemImage({super.key});
 
   @override
   Widget build(BuildContext context) {
