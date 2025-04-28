@@ -3,6 +3,7 @@ import 'package:bookly_app/features/home/presentation/view/widgets/book_rating_w
 import 'package:bookly_app/features/home/presentation/view/widgets/featured_list_view_item_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'book_actions.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -38,13 +39,15 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 18.h),
+            padding: EdgeInsets.only(top: 18.h,bottom: 37.h),
             child: const BookRatingWidget(
               mainAxisAlignment: MainAxisAlignment.center,
             ),
-          )
+          ),
+          const BookActions(),
         ],
       ),
     );
   }
 }
+
