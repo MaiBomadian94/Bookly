@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-
 import 'featured_list_view_item_image.dart';
 
 class SimilarBooksListView extends StatelessWidget {
