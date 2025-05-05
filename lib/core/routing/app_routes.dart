@@ -1,33 +1,37 @@
 import 'package:bookly_app/features/home/presentation/view/books_details_view.dart';
 import 'package:bookly_app/features/home/presentation/view/home_view.dart';
+import 'package:bookly_app/features/search/presentation/view/search_view.dart';
 import 'package:bookly_app/features/splash/view/splash_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRoutes {
-  static const String initial = '/';    // بيحدد نقطه البدايه من هنا عن طريق السلاش
+  static const String initial = '/'; // بيحدد نقطه البدايه من هنا عن طريق السلاش
   static const String homeView = '/homeView';
   static const String booksDetailsView = '/booksDetailsView';
+  static const String searchView = '/searchView';
 
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
         path: initial,
-        builder: (BuildContext context, GoRouterState state) {
-          return const SplashView();
-        },
+        builder: (BuildContext context, GoRouterState state) =>
+            const SplashView(),
       ),
       GoRoute(
         path: homeView,
-        builder: (BuildContext context, GoRouterState state) {
-          return const HomeView();
-        },
+        builder: (BuildContext context, GoRouterState state) =>
+            const HomeView(),
       ),
       GoRoute(
         path: booksDetailsView,
-        builder: (BuildContext context, GoRouterState state) {
-          return const BooksDetailsView();
-        },
+        builder: (BuildContext context, GoRouterState state) =>
+            const BooksDetailsView(),
+      ),
+      GoRoute(
+        path: searchView,
+        builder: (BuildContext context, GoRouterState state) =>
+            const SearchView(),
       ),
     ],
   );
