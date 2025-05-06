@@ -1,14 +1,13 @@
+import 'package:bookly_app/core/utils/api_urls.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {
-  final _baseURL = 'https://www.googleapis.com/books/v1/';
+  final Dio _dio;
 
-  final Dio dio;
-
-  ApiService(this.dio);
+  ApiService(this._dio);
 
   Future<Map<String, dynamic>> get({required String endPoint}) async {
-    var response = await dio.get('$_baseURL $endPoint');
+    var response = await _dio.get('${ApiURL.baseURL}$endPoint');
 
     return response.data;
   }
