@@ -10,7 +10,7 @@ import '../../../../injections/injections.dart';
 
 class HomeRepoImpl implements HomeRepository {
   @override
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       final data =
           await sl<ApiService>().get(endPoint: ApiURL.fetchNewestBooks);
