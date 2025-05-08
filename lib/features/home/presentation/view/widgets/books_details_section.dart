@@ -14,10 +14,10 @@ class BookDetailsSection extends StatelessWidget {
 
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const FeaturedListViewItemImage(),
-        ),
+        // Padding(
+        //   padding: EdgeInsets.symmetric(horizontal: width * .17),
+        //   child: const FeaturedListViewItemImage(),
+        // ),
         Padding(
           padding: EdgeInsets.only(top: 35.h, bottom: 6.h),
           child: Text(

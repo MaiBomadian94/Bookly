@@ -6,7 +6,7 @@ import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
 
-Future<void> intInjections() async {
+Future<void> setupServiceLocator() async {
   sl.registerLazySingleton<ApiService>(() => ApiService(Dio()));
   sl.registerLazySingleton<HomeRepository>(() => HomeRepoImpl());
 }

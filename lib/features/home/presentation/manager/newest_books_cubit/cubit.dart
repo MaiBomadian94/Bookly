@@ -3,8 +3,8 @@ import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../injections/injections.dart';
 
-class FeaturedBooksCubit extends Cubit<NewestBooksStates> {
-  FeaturedBooksCubit() : super(InitialNewestBooksStates());
+class NewestBooksCubit extends Cubit<NewestBooksStates> {
+  NewestBooksCubit() : super(InitialNewestBooksStates());
 
   Future<void> fetchNewestBooks() async {
     emit(LoadingNewestBooksStates());
