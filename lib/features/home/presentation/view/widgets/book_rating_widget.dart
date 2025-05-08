@@ -5,10 +5,12 @@ import '../../../../../core/utils/styles.dart';
 class BookRatingWidget extends StatelessWidget {
   const BookRatingWidget({
     super.key,
-    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisAlignment = MainAxisAlignment.start, required this.ratingCount, required this.ratingAvg,
   });
 
   final MainAxisAlignment mainAxisAlignment;
+  final int ratingCount;
+  final int ratingAvg;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +25,12 @@ class BookRatingWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 6),
           child: Text(
-            '4.8',
+            ratingAvg.toString(),
             style: Styles.textTitle16.copyWith(fontWeight: FontWeight.w600),
           ),
         ),
         Text(
-          '(250)',
+          '($ratingCount)',
           style: Styles.textTitle14.copyWith(
             color: Colors.white.withOpacity(.5),
           ),

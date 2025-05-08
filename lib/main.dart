@@ -23,7 +23,7 @@ class Bookly extends StatelessWidget {
           create: (context) => FeaturedBooksCubit()..fetchFeaturedBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(),
+          create: (context) => NewestBooksCubit()..fetchNewestBooks(),
         )
       ],
       child: ScreenUtilInit(

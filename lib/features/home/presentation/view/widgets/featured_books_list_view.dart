@@ -17,6 +17,7 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.separated(
+              physics: BouncingScrollPhysics(),
               separatorBuilder: (context, index) {
                 return SizedBox(
                   width: 16,

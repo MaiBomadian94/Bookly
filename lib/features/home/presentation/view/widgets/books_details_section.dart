@@ -38,7 +38,7 @@ class BookDetailsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 18.h, bottom: 37.h),
           child: const BookRatingWidget(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center, ratingCount: 5, ratingAvg: 6,
           ),
         ),
         const BookActions(),
