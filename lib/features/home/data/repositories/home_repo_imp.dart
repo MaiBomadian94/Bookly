@@ -62,4 +62,32 @@ class HomeRepoImpl implements HomeRepository {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      final data =
+          await sl<ApiService>().get(endPoint: ApiURL.fetchSimilarBooks);
+
+      final List<BookModel> books = [];
+
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+
+      return Right(books);
+    } catch (error) {
+      if (error is DioException) {
+        return Left(
+          ServerFailure.fromDioError(error),
+        );
+      }
+      return Left(
+        ServerFailure(
+          errorMsg: error.toString(),
+        ),
+      );
+    }
+  }
 }

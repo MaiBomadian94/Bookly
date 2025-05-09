@@ -5,4 +5,7 @@ class ApiURL {
 
   static const fetchFeaturedBooks =
       'volumes?q=subject:Programming&Filtering=free-ebooks';
+
+  static const fetchSimilarBooks =
+      'volumes?q=subject:Programming&Filtering=free-ebooks&Sorting=relevance';
 }
