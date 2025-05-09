@@ -11,7 +11,7 @@ class FeaturedListViewItemImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: AspectRatio(
-        aspectRatio: 2.6 / 4,
+        aspectRatio: 2.5 / 4.1,
         child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: imageUrl,

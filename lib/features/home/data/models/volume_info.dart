@@ -107,7 +107,7 @@ class VolumeInfo {
   bool? allowAnonLogging;
   String? contentVersion;
   PanelizationSummary? panelizationSummary;
-  ImageLinks imageLinks;
+  ImageLinks? imageLinks;
   String? language;
   String? previewLink;
   String? infoLink;
@@ -136,7 +136,7 @@ class VolumeInfo {
     if (panelizationSummary != null) {
       map['panelizationSummary'] = panelizationSummary?.toJson();
     }
-    map['imageLinks'] = imageLinks.toJson();
+    map['imageLinks'] = imageLinks?.toJson();
     map['language'] = language;
     map['previewLink'] = previewLink;
     map['infoLink'] = infoLink;

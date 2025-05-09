@@ -1,10 +1,8 @@
 import 'package:bookly_app/core/routing/app_routes.dart';
 import 'package:bookly_app/features/home/data/models/book_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../core/utils/assets_data.dart';
 import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'book_rating_widget.dart';
@@ -26,7 +24,7 @@ class NewestBookListViewItem extends StatelessWidget {
         child: Row(
           children: [
             FeaturedListViewItemImage(
-              imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??'',
             ),
             SizedBox(
               width: 20.w,
@@ -48,7 +46,7 @@ class NewestBookListViewItem extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 3.h),
                     child: Text(
-                      bookModel.volumeInfo.authors![0],
+                      bookModel.volumeInfo.authors?[0]?? bookModel.volumeInfo.authors?[1]??'',
                       style: Styles.textTitle14,
                       maxLines: 2,
                     ),
