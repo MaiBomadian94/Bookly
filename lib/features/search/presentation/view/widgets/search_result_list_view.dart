@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../home/presentation/view/widgets/best_seller_list_view_item.dart';
+import '../../../../home/presentation/view/widgets/newest_book_list_view_item.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
@@ -9,7 +9,8 @@ class SearchResultListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       itemBuilder: (context, index) {
-        return const BestSellerListViewItem();
+        return Text('');
+        // return const BestSellerListViewItem();
       },
       separatorBuilder: (context, index) {
         return const SizedBox(

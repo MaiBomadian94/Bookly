@@ -1,10 +1,10 @@
 class ImageLinks {
-  String? smallThumbnail;
-  String? thumbnail;
+  String smallThumbnail;
+  String thumbnail;
 
   ImageLinks({
-    this.smallThumbnail,
-    this.thumbnail,
+    required this.smallThumbnail,
+    required this.thumbnail,
   });
 
   factory ImageLinks.fromJson(dynamic json) {

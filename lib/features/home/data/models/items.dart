@@ -8,7 +8,7 @@ class Items {
   String? id;
   String? etag;
   String? selfLink;
-  VolumeInfo? volumeInfo;
+  final VolumeInfo volumeInfo;
   SaleInfo? saleInfo;
   AccessInfo? accessInfo;
   SearchInfo? searchInfo;
@@ -18,7 +18,7 @@ class Items {
     this.id,
     this.etag,
     this.selfLink,
-    this.volumeInfo,
+    required this.volumeInfo,
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
@@ -30,9 +30,7 @@ class Items {
       id: json['id'],
       etag: json['etag'],
       selfLink: json['selfLink'],
-      volumeInfo: json['volumeInfo'] != null
-          ? VolumeInfo.fromJson(json['volumeInfo'])
-          : null,
+      volumeInfo: VolumeInfo.fromJson(json['volumeInfo']),
       saleInfo:
           json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null,
       accessInfo: json['accessInfo'] != null
