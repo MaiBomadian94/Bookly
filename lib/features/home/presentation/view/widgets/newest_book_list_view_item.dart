@@ -17,14 +17,17 @@ class NewestBookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        GoRouter.of(context).push(AppRoutes.booksDetailsView);
+        GoRouter.of(context).push(
+          AppRoutes.booksDetailsView,
+          extra: bookModel,
+        );
       },
       child: SizedBox(
         height: 120.h,
         child: Row(
           children: [
             FeaturedListViewItemImage(
-              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??'',
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
             ),
             SizedBox(
               width: 20.w,
@@ -46,7 +49,9 @@ class NewestBookListViewItem extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 3.h),
                     child: Text(
-                      bookModel.volumeInfo.authors?[0]?? bookModel.volumeInfo.authors?[1]??'',
+                      bookModel.volumeInfo.authors?[0] ??
+                          bookModel.volumeInfo.authors?[1] ??
+                          '',
                       style: Styles.textTitle14,
                       maxLines: 2,
                     ),

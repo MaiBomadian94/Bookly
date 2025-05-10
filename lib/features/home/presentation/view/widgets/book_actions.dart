@@ -17,7 +17,7 @@ class BookActions extends StatelessWidget {
               topLeft: Radius.circular(12.r),
               bottomLeft: Radius.circular(12.r),
             ),
-            buttonText: '19.99',
+            buttonText: 'Free',
           ),
         ),
         Expanded(

@@ -1,8 +1,11 @@
+import 'package:bookly_app/features/home/data/models/book_model.dart';
+import 'package:bookly_app/features/home/presentation/manager/similar_books_cubit/cubit.dart';
 import 'package:bookly_app/features/home/presentation/view/books_details_view.dart';
 import 'package:bookly_app/features/home/presentation/view/home_view.dart';
 import 'package:bookly_app/features/search/presentation/view/search_view.dart';
 import 'package:bookly_app/features/splash/view/splash_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRoutes {
@@ -25,8 +28,12 @@ abstract class AppRoutes {
       ),
       GoRoute(
         path: booksDetailsView,
-        builder: (BuildContext context, GoRouterState state) =>
-            const BooksDetailsView(),
+        builder: (BuildContext context, GoRouterState state) => BlocProvider(
+          create: (context) => SimilarBooksCubit(),
+          child: BooksDetailsView(
+            bookModel: state.extra as BookModel,
+          ),
+        ),
       ),
       GoRoute(
         path: searchView,
