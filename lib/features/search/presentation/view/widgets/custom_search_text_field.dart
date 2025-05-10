@@ -1,4 +1,6 @@
+import 'package:bookly_app/features/search/presentation/manager/search_cubit/cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,6 +12,11 @@ class CustomSearchTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
       child: TextField(
+        onSubmitted: (query) {
+          if (query.isNotEmpty) {
+            BlocProvider.of<SearchCubit>(context).searchInBooks(query: query);
+          }
+        },
         decoration: InputDecoration(
           border: buildOutlineInputBorder(),
           focusedBorder: buildOutlineInputBorder(),

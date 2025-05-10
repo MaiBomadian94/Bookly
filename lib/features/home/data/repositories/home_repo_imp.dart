@@ -12,8 +12,9 @@ class HomeRepoImpl implements HomeRepository {
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
-      final data =
-          await sl<ApiService>().get(endPoint: ApiURL.fetchNewestBooks);
+      final data = await sl<ApiService>().get(
+        endPoint: ApiURL.fetchNewestBooks,
+      );
 
       final List<BookModel> books = [];
 
@@ -39,8 +40,9 @@ class HomeRepoImpl implements HomeRepository {
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      final data =
-          await sl<ApiService>().get(endPoint: ApiURL.fetchFeaturedBooks);
+      final data = await sl<ApiService>().get(
+        endPoint: ApiURL.fetchFeaturedBooks,
+      );
 
       final List<BookModel> books = [];
 
@@ -67,8 +69,9 @@ class HomeRepoImpl implements HomeRepository {
   Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
       {required String category}) async {
     try {
-      final data =
-          await sl<ApiService>().get(endPoint: ApiURL.fetchSimilarBooks);
+      final data = await sl<ApiService>().get(
+        endPoint: ApiURL.fetchSimilarBooks,
+      );
 
       final List<BookModel> books = [];
 

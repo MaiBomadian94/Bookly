@@ -9,24 +9,27 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomSearchTextField(),
-        SizedBox(
-          height: 8,
-        ),
-        Text(
-          'Search Result',
-          style: Styles.textTitle18,
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        Expanded(
-          child: SearchResultListView(),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomSearchTextField(),
+          SizedBox(
+            height: 8,
+          ),
+          Text(
+            'Search Result',
+            style: Styles.textTitle18,
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          Expanded(
+            child: SearchResultListView(),
+          ),
+        ],
+      ),
     );
   }
 }

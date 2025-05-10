@@ -8,4 +8,6 @@ class ApiURL {
 
   static const fetchSimilarBooks =
       'volumes?q=subject:Programming&Filtering=free-ebooks&Sorting=relevance';
+
+  static const String searchBooks = 'volumes';
 }

@@ -1,6 +1,7 @@
 import 'package:bookly_app/core/utils/app_theme_manager.dart';
 import 'package:bookly_app/features/home/presentation/manager/featured_books_cubit/cubit.dart';
 import 'package:bookly_app/features/home/presentation/manager/newest_books_cubit/cubit.dart';
+import 'package:bookly_app/features/search/presentation/manager/search_cubit/cubit.dart';
 import 'package:bookly_app/injections/injections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +25,9 @@ class Bookly extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit()..fetchNewestBooks(),
+        ),
+        BlocProvider(
+          create: (context) => SearchCubit(),
         )
       ],
       child: ScreenUtilInit(
