@@ -10,6 +10,7 @@ import 'core/routing/app_routes.dart';
 
 void main() {
   setupServiceLocator();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const Bookly());
 }
 
